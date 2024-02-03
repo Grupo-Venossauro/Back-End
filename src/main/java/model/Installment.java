@@ -1,32 +1,21 @@
 package model;
 
-import java.math.BigDecimal;import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tb_installment")
+
+
 public class Installment {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
 	
 	private Integer installment_number;
 	
 	private BigDecimal value;
-	
-	@ManyToOne
-	@JsonIgnoreProperties("installment")
+
 	private Transaction transaction;
-	
-	
-	// Geters and Seters
+
 	public Long getId() {
 		return id;
 	}
@@ -50,8 +39,17 @@ public class Installment {
 	public void setValue(BigDecimal value) {
 		this.value = value;
 	}
+
+	public Transaction getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(Transaction transaction) {
+		this.transaction = transaction;
+	}
 	
 	
+
 	
 
 }

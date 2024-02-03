@@ -5,44 +5,18 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "tb_transaction")
 public class Transaction {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column
     private LocalDateTime transaction_date = LocalDateTime.now();
 	
-	@Column
 	private BigDecimal amount;
 	
-	
-	// Injeção de dependências
-	@ManyToOne
-	@JsonIgnoreProperties("transaction")
 	private Person person;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "transaction", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("transaction")
+
 	private List<Installment> installment;
 
-	// Geters and Seters
 	public Long getId() {
 		return id;
 	}
@@ -82,6 +56,8 @@ public class Transaction {
 	public void setInstallment(List<Installment> installment) {
 		this.installment = installment;
 	}
+
+
 
 
 	
