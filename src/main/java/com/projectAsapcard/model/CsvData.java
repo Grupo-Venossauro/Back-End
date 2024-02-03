@@ -1,4 +1,4 @@
-package model;
+package com.projectAsapcard.model;
 
 import com.opencsv.bean.CsvBindByPosition;
 

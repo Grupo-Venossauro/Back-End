@@ -1,9 +1,8 @@
-package service;
+package com.projectAsapcard.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-
-import model.CsvData;
+import com.projectAsapcard.model.CsvData;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

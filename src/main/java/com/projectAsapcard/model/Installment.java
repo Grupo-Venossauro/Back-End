@@ -1,4 +1,4 @@
-package model;
+package com.projectAsapcard.model;
 
 import java.math.BigDecimal;
 
