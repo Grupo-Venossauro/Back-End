@@ -26,7 +26,7 @@ public class CsvToJsonService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    public void processCsvFile(String csvFilePath, String queueName) {
+    public void processCsvFile(String csvFilePath, String inputData) {
         try {
             Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));
             CsvToBean<CsvData> csvToBean = new CsvToBeanBuilder<CsvData>(reader)
@@ -40,7 +40,7 @@ public class CsvToJsonService {
             String json = objectMapper.writeValueAsString(csvDataList);
             System.out.println(json);
 
-            rabbitTemplate.convertAndSend(queueName, json);
+            rabbitTemplate.convertAndSend(inputData, json);
         } catch (Exception e) {
             e.printStackTrace();
         }

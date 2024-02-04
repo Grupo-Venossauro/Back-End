@@ -21,7 +21,7 @@ public class CsvController {
 	@PostMapping
 	public String processCsvFile() {
 	    String fileName = "src/main/resources/data.csv";
-	    csvToJsonService.processCsvFile(fileName, "queueName");
+	    csvToJsonService.processCsvFile(fileName, "inputData");
 	    return "CSV file processed successfully";
 	}
 
