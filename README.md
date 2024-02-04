@@ -1,5 +1,3 @@
-<img src="bulbasaur pixel.png">
-<img src="ivysaur pixel.png">
 <img src="venosaur pixel.webp">
 
 
