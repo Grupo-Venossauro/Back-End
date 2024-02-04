@@ -41,14 +41,18 @@ Este é um projeto simples para demonstrar o uso básico de Queues no RabbitMQ.
 Você pode modificar o código para atender às suas necessidades específicas.
 Para mais informações sobre o RabbitMQ, consulte a documentação oficial: https://www.rabbitmq.com/documentation.html
 
-Contribuições:
-
-Sinta-se à vontade para contribuir para este projeto. Para mais informações, consulte o guia de contribuições: <URL inválido removido>
-
 Agradecimentos:
 
 Agradecemos a todos que contribuíram para este projeto.
 
 Contato:
 
-Se você tiver alguma dúvida ou sugestão, entre em contato conosco através do GitHub.
+https://github.com/Kaellen-heleni
+https://github.com/KievKiss
+https://github.com/Pedro-Vhiana
+https://github.com/MatheusJulioSantana
+https://github.com/vinysl
+
+
+<img src="ivysaur pixel.png">
+
