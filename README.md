@@ -51,9 +51,13 @@ Agradecemos a todos que contribuíram para este projeto.
 Contato:
 
 https://github.com/Kaellen-heleni
+
 https://github.com/KievKiss
+
 https://github.com/Pedro-Vhiana
+
 https://github.com/MatheusJulioSantana
+
 https://github.com/vinysl
 
 
