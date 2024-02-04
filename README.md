@@ -12,8 +12,11 @@ Este projeto demonstra a implementação de um sistema de mensagens assíncronas
 Tecnologias:
 
 Java 11+
+
 RabbitMQ 3.8+
+
 Maven
+
 Requisitos:
 
 Ter o RabbitMQ instalado e funcionando em sua máquina local.
