@@ -59,13 +59,9 @@ As mensagens são simples strings que podem ser personalizadas de acordo com a n
 Você pode modificar o código para atender às suas necessidades específicas.
 Para mais informações sobre o RabbitMQ, consulte a documentação oficial: https://www.rabbitmq.com/documentation.html*
 
-#### Contribuições:
-
-*Sinta-se à vontade para contribuir para este projeto. Para mais informações, consulte o guia de contribuições: <URL inválido removido>*
-
 #### Agradecimentos:
 
-*Agradecemos a todos que contribuíram para este projeto.*
+*Agradecemos a Kevin Oliveira, Kaellen Oliveira, Matheus Julio, Pedro Viana, Vinicius Santos.*
 
 *✉️ Contato:*
 
