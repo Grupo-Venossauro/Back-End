@@ -1,6 +1,6 @@
-<img src="/assets/img/bulbasaur pixel.png">
-<img src="/assets/img/ivysaur pixel.png">
-<img src="/assets/img/venosaur pixel.webp">
+<img src="bulbasaur pixel.png">
+<img src="ivysaur pixel.png">
+<img src="venosaur pixel.webp">
 
 
 
