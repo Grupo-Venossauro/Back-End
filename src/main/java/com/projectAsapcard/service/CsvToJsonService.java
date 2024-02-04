@@ -15,9 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 @Service
@@ -28,19 +25,28 @@ public class CsvToJsonService {
 
     public void processCsvFile(String csvFilePath, String inputData) {
         try {
-            Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));
-            CsvToBean<CsvData> csvToBean = new CsvToBeanBuilder<CsvData>(reader)
-                    .withType(CsvData.class)
-                    .withIgnoreLeadingWhiteSpace(true)
-                    .build();
+            CSVParser csvParser = new CSVParserBuilder()
+                .withSeparator(';')
+                .build();
+
+            CSVReader csvReader = new CSVReaderBuilder(new FileReader(csvFilePath))
+                .withCSVParser(csvParser)
+                .build();
+
+            CsvToBean<CsvData> csvToBean = new CsvToBeanBuilder<CsvData>(csvReader)
+                .withType(CsvData.class)
+                .build();
 
             List<CsvData> csvDataList = csvToBean.parse();
 
             ObjectMapper objectMapper = new ObjectMapper();
-            String json = objectMapper.writeValueAsString(csvDataList);
-            System.out.println(json);
 
-            rabbitTemplate.convertAndSend(inputData, json);
+            for (CsvData csvData : csvDataList) {
+                String json = objectMapper.writeValueAsString(csvData);
+                System.out.println(json);
+
+                rabbitTemplate.convertAndSend(inputData, json);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,17 +56,17 @@ public class CsvToJsonService {
         String fileName = "src/main/resources/data.csv";
 
         CSVParser csvParser = new CSVParserBuilder()
-                .withSeparator(';')
+            .withSeparator(';')
                 .build();
 
         CSVReader csvReader = new CSVReaderBuilder(new FileReader(fileName))
-                .withCSVParser(csvParser)
-                .build();
+            .withCSVParser(csvParser)
+            .build();
 
         List<CsvData> beans = new CsvToBeanBuilder<CsvData>(csvReader)
-                .withType(CsvData.class)
-                .build()
-                .parse();
+            .withType(CsvData.class)
+            .build()
+            .parse();
 
         return beans;
     }
